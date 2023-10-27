@@ -1,0 +1,45 @@
+@font-face {
+ font-family: "sansationBold";
+ src: url("./assets/fonts/sansation/Sansation_Bold.ttf") format("truetype");
+}
+
+@font-face {
+ font-family: "sansationRegular";
+ src: url("./assets/fonts/sansation/Sansation_Regular.ttf") format("truetype");
+}
+
+@font-face {
+ font-family: "sansationLight";
+ src: url("./assets/fonts/sansation/Sansation_Light.ttf") format("truetype");
+}
+
+@font-face {
+ font-family: "jostRegular";
+ src: url("./assets/fonts/jost/static/Jost-Regular.ttf") format("truetype");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+ @apply box-border p-0 m-0;
+}
+
+.swiper {
+ width: 100%;
+ height: 100%;
+}
+
+.swiper-slide {
+ text-align: center;
+ font-size: 18px;
+ background: #fff;
+}
+
+.swiper-slide img {
+ display: block;
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+}
