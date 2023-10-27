@@ -7,16 +7,11 @@ import HeaderCategories from "./HeaderCategories"
 
 const FixedHeader = () => {
   return (
-    <motion.header
-      class={`fixed top-0 left-0 z-50 w-full bg-transparent text-zinc-50 flex items-center flex-col justify-center shadow-md`}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
+    <motion.header class="fixed top-0 left-0 z-50 w-full bg-transparent text-zinc-50 flex items-center flex-col justify-center shadow-md" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
       <div className="w-full bg-zinc-50 text-main-primary">
         <Container>
           <div class="h-20 flex justify-between items-center relative z-50">
-            <motion.span initial={{ x: "-100%" }} animate={{ x: 0 }}>
+            <motion.span initial={{ x: "-100%" }} animate={{ x: 0 }} transition={{ duration: 0.5, timingFunction: "easeInOut" }}>
               <a href={SITE_URL} class="relative z-50">
                 <img src={logo_dark} className="object-cover w-16" />
               </a>

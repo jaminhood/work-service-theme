@@ -1,43 +1,46 @@
-import React, { useState, useEffect } from "react"
-import { BiMenuAltRight } from "react-icons/bi"
-import { AiOutlineCloseCircle } from "react-icons/ai"
-import logo_light from "../../../assets/imgs/logo-light.png"
-import logo_dark from "../../../assets/imgs/logo-dark.png"
-import { SITE_URL } from "../../constants"
-import Container from "../Container"
-import HeaderNavBar from "./components/HeaderNavBar"
-import HeaderFixed from "./components/HeaderFixed"
+import { useState, useEffect } from "react"
+// import { BiMenuAltRight } from "react-icons/bi"
+// import { AiOutlineCloseCircle } from "react-icons/ai"
+// import logo_light from "../../../assets/imgs/logo-light.png"
+// import logo_dark from "../../../assets/imgs/logo-dark.png"
+// import { SITE_URL } from "../../constants"
+// import Container from "../Container"
+// import HeaderNavBar from "./components/HeaderNavBar"
+// import HeaderFixed from "./components/HeaderFixed"
 import GeneralHeader from "./components/GeneralHeader"
 import FixedHeader from "./components/FixedHeader"
 
 const Header = () => {
   // const url = window.location.href
   // const [isOpened, setIsOpened] = useState(false)
-  const [isTop, setIsTop] = useState(false)
+  // const [isTop, setIsTop] = useState(false)
 
   // const toggleOpened = () => setIsOpened((prev) => !prev)
 
   // Add an event listener to handle the scroll position
-  const handleScroll = function () {
-    if (window.scrollY > 300) {
-      setIsTop(true)
-      // console.log(window.scrollY, `yes`)
-    } else {
-      setIsTop(false)
-    }
-  }
+  const [isFixed, setIsFixed] = useState(false)
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll)
-    // Remove the event listener when the component unmounts
-    return () => window.removeEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", function () {
+      const scrollPosition = window.scrollY
+
+      if (scrollPosition > 300) {
+        setIsFixed(true)
+      } else {
+        setIsFixed(false)
+      }
+    })
   }, [])
 
-  if (isTop === true) {
-    return <FixedHeader />
-  }
+  return <>{isFixed ? <FixedHeader /> : <GeneralHeader />}</>
 
-  return <GeneralHeader />
+  // if (isTop === true) {
+  //   // return <FixedHeader />
+  //   return <>Hello</>
+  // }
+
+  // return <GeneralHeader />
+  // return <>Hi</>
   // const light = url.includes(`about`) || url.includes(`contact`) || url === SITE_URL
 
   // return (
