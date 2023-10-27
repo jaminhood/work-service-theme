@@ -9,8 +9,11 @@ import { useState, useEffect } from "react"
 // import HeaderFixed from "./components/HeaderFixed"
 import GeneralHeader from "./components/GeneralHeader"
 import FixedHeader from "./components/FixedHeader"
+import useDeviceType from "../../hooks/useDeviceType"
+import MobileFixedHeader from "./components/MobileFixedHeader"
 
 const Header = () => {
+  const { isMobile } = useDeviceType()
   // const url = window.location.href
   // const [isOpened, setIsOpened] = useState(false)
   // const [isTop, setIsTop] = useState(false)
@@ -32,7 +35,7 @@ const Header = () => {
     })
   }, [])
 
-  return <>{isFixed ? <FixedHeader /> : <GeneralHeader />}</>
+  return <>{isMobile ? isFixed ? <MobileFixedHeader /> : <GeneralHeader /> : isFixed ? <FixedHeader /> : <GeneralHeader />}</>
 
   // if (isTop === true) {
   //   // return <FixedHeader />
