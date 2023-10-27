@@ -18,11 +18,11 @@ const HeaderCategories = ({ fixed, isOpened }) => {
 
   return (
     <>
-      {categories.length > 0 && (
+      {categories.length == 0 && (
         <div
           className={`fixed top-0 bottom-0 ${isOpened ? `right-0 left-0` : `right-full -left-full`} ${
             fixed ? `-z-10` : `z-40`
-          } flex items-center justify-center md:justify-evenly w-full transition-all duration-500 ease-in-out p-8 md:p-2 border-b shadow-sm text-zinc-50 border-b-main-primary bg-main-primary md:relative md:right-0 md:left-0`}
+          } flex items-center justify-center md:justify-evenly w-full transition-all duration-500 ease-in-out p-8 md:p-2 border-b shadow-sm text-zinc-50 bg-main-primary md:relative md:right-0 md:left-0`}
         >
           <ul className="flex flex-col items-center justify-center w-full gap-8 md:flex-row md:gap-4 md:justify-evenly">
             {categories.map((data) => (
