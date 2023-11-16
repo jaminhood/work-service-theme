@@ -1,10 +1,10 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import HomeHero from "./components/home-hero"
-import HomeSubCategories from "./components/home-sub-categories"
 import HomeServices from "./components/home-services"
+import HomeSubCategories from "./components/home-sub-categories"
 import HomeTrusted from "./components/home-trusted"
-import HomeNews from "./components/home-news"
+// import HomeNews from "./components/home-news"
 import HomeBenefits from "./components/home-benefits"
 
 const Homepage = () => {
@@ -23,9 +23,9 @@ const Homepage = () => {
  if (document.querySelector("#work-service-frontend-home-sub-categories")) {
   ReactDOM.render(<HomeSubCategories />, document.querySelector("#work-service-frontend-home-sub-categories"))
  }
- if (document.querySelector("#work-service-frontend-home-news")) {
-  ReactDOM.render(<HomeNews />, document.querySelector("#work-service-frontend-home-news"))
- }
+//  if (document.querySelector("#work-service-frontend-home-news")) {
+//   ReactDOM.render(<HomeNews />, document.querySelector("#work-service-frontend-home-news"))
+//  }
 }
 
 export default Homepage

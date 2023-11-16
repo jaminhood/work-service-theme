@@ -8,4 +8,4 @@
 </head>
 
 <body <?php body_class(); ?>>
-  <div id="work-service-frontend-header"></div>
+  <header id="work-service-client-header"></header>
