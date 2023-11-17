@@ -1,10 +1,11 @@
 <?php get_header(); ?>
 
 <main>
- <div id="work-service-frontend-about-hero"></div>
- <div id="work-service-frontend-about"></div>
- <div id="work-service-frontend-about-stmt"></div>
- <div id="work-service-frontend-about-team"></div>
+  <section id="work-service-client-about-banner"></section>
+  <section id="work-service-client-about-story"></section>
+  <section id="work-service-client-about-values"></section>
+  <section id="work-service-client-about-team"></section>
+  <section id="work-service-client-about-join-us"></section>
 </main>
 
 <?php get_footer();

@@ -1,4 +1,4 @@
-<div id="work-service-frontend-footer"></div>
+<footer id="work-service-client-footer"></footer>
 
 <?php wp_footer(); ?>
 </body>

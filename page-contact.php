@@ -1,8 +1,9 @@
 <?php get_header(); ?>
 
 <main>
- <div id="work-service-frontend-contact-hero"></div>
- <div id="work-service-frontend-contact-container"></div>
+  <section id="work-service-client-contact-banner"></section>
+  <section id="work-service-client-contact-get-in-touch"></section>
+  <section id="work-service-client-contact-faq"></section>
 </main>
 
 <?php get_footer();

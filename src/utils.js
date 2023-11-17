@@ -32,4 +32,23 @@ export const headerNavBtns = [
 	},
 ]
 
+export const footerNavBtns = [
+	{
+		action: `contact`,
+		render: `Contact Us`,
+	},
+	{
+		action: `expert`,
+		render: `Become an Expert`,
+	},
+	{
+		action: `faq`,
+		render: `FAQ`,
+	},
+	{
+		action: `terms`,
+		render: `Term of Use`,
+	},
+]
+
 export const heroSlides = [hero_1, hero_2, hero_3, hero_4]

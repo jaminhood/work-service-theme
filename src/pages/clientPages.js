@@ -2,11 +2,17 @@ import React from "react"
 import ReactDOM from "react-dom"
 import BenefitsLayout from "../layouts/benefits-layout"
 import DownloadLayout from "../layouts/download-layout"
+import FooterLayout from "../layouts/footer-layout"
+import GetInTouch from "../layouts/get-in-touch"
 import HeaderLayout from "../layouts/header-layout"
 import HeroLayout from "../layouts/hero-layout"
+import JoinUsLayout from "../layouts/join-us-layout"
 import NewsLayout from "../layouts/news-layout"
+import OurStory from "../layouts/our-story"
 import ServicesLayout from "../layouts/services-layout"
+import TeamLayout from "../layouts/team"
 import TrustedByLayout from "../layouts/trusted-by-layout"
+import ValuesLayout from "../layouts/values-layout"
 
 // Client Routes
 const clientPages = () => {
@@ -16,63 +22,79 @@ const clientPages = () => {
 		ReactDOM.render(<HeaderLayout />, element)
 	}
 
-	element = document.querySelector("#work-service-client-page-banner")
+	element = document.querySelector("#work-service-client-footer")
 	if (typeof element !== "undefined" && element !== null) {
-		ReactDOM.render(<HeroLayout />, element)
-	}
-
-	if (document.querySelector("#work-service-client-footer")) {
-		ReactDOM.render("", document.querySelector("#work-service-client-footer"))
+		ReactDOM.render(<FooterLayout />, element)
 	}
 	// homepage
 	element = document.querySelector("#work-service-client-home-banner")
 	if (typeof element !== "undefined" && element !== null) {
-		ReactDOM.render(<HeroLayout />, element)
+		ReactDOM.render(<HeroLayout page="home" />, element)
 	}
-
 	element = document.querySelector("#work-service-client-home-trust")
 	if (typeof element !== "undefined" && element !== null) {
 		ReactDOM.render(<TrustedByLayout />, element)
 	}
-
 	element = document.querySelector("#work-service-client-home-services")
 	if (typeof element !== "undefined" && element !== null) {
 		ReactDOM.render(<ServicesLayout />, element)
 	}
-
 	element = document.querySelector("#work-service-client-home-benefits")
 	if (typeof element !== "undefined" && element !== null) {
 		ReactDOM.render(<BenefitsLayout />, element)
 	}
-
 	element = document.querySelector("#work-service-client-home-news")
 	if (typeof element !== "undefined" && element !== null) {
 		ReactDOM.render(<NewsLayout />, element)
 	}
-
 	element = document.querySelector("#work-service-client-home-download")
 	if (typeof element !== "undefined" && element !== null) {
 		ReactDOM.render(<DownloadLayout />, element)
 	}
 	// about
-	if (document.querySelector("#work-service-client-about-story")) {
-		ReactDOM.render("", document.querySelector("#work-service-client-about-story"))
+	element = document.querySelector("#work-service-client-about-banner")
+	if (typeof element !== "undefined" && element !== null) {
+		ReactDOM.render(
+			<HeroLayout
+				page="about"
+				heading="About Us"
+			/>,
+			element,
+		)
 	}
-	if (document.querySelector("#work-service-client-about-values")) {
-		ReactDOM.render("", document.querySelector("#work-service-client-about-values"))
+	element = document.querySelector("#work-service-client-about-story")
+	if (typeof element !== "undefined" && element !== null) {
+		ReactDOM.render(<OurStory />, element)
 	}
-	if (document.querySelector("#work-service-client-about-team")) {
-		ReactDOM.render("", document.querySelector("#work-service-client-about-team"))
+	element = document.querySelector("#work-service-client-about-values")
+	if (typeof element !== "undefined" && element !== null) {
+		ReactDOM.render(<ValuesLayout />, element)
 	}
-	if (document.querySelector("#work-service-client-about-join-us")) {
-		ReactDOM.render("", document.querySelector("#work-service-client-about-join-us"))
+	element = document.querySelector("#work-service-client-about-team")
+	if (typeof element !== "undefined" && element !== null) {
+		ReactDOM.render(<TeamLayout />, element)
+	}
+	element = document.querySelector("#work-service-client-about-join-us")
+	if (typeof element !== "undefined" && element !== null) {
+		ReactDOM.render(<JoinUsLayout />, element)
 	}
 	// contact
-	if (document.querySelector("#work-service-client-contact-get-in-touch")) {
-		ReactDOM.render("", document.querySelector("#work-service-client-contact-get-in-touch"))
+	element = document.querySelector("#work-service-client-contact-banner")
+	if (typeof element !== "undefined" && element !== null) {
+		ReactDOM.render(
+			<HeroLayout
+				page="contact"
+				heading="Contact Us"
+			/>,
+			element,
+		)
+	}
+	element = document.querySelector("#work-service-client-contact-get-in-touch")
+	if (typeof element !== "undefined" && element !== null) {
+		ReactDOM.render(<GetInTouch />, element)
 	}
 	if (document.querySelector("#work-service-client-contact-faq")) {
-		ReactDOM.render("", document.querySelector("#work-service-client-contact-faq"))
+		ReactDOM.render(<h1>FAQs</h1>, document.querySelector("#work-service-client-contact-faq"))
 	}
 }
 

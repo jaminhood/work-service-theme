@@ -22,7 +22,7 @@ const DesktopHeader = () => {
 							{headerNavLinks.map(link => (
 								<li key={link.path}>
 									<a
-										href={link.path}
+										href={`${SITE_URL}${link.path}`}
 										className={`font-sansation-bold capitalize text-zinc-50`}>
 										{link.render}.
 									</a>
