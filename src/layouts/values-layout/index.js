@@ -8,7 +8,7 @@ const ValuesLayout = () => {
 			<Heading>
 				<span className="underline font-sansation-bold">Core</span> Values
 			</Heading>
-			<div className="grid items-center grid-cols-1 gap-8 md:grid-cols-4 mt-8">
+			<div className="grid items-center grid-cols-2 gap-8 md:grid-cols-4 mt-8">
 				{[1, 2, 3, 4].map(data => (
 					<ValueBox key={data} />
 				))}

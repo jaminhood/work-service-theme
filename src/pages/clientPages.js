@@ -2,6 +2,7 @@ import React from "react"
 import ReactDOM from "react-dom"
 import BenefitsLayout from "../layouts/benefits-layout"
 import DownloadLayout from "../layouts/download-layout"
+import FAQ from "../layouts/faq-layout"
 import FooterLayout from "../layouts/footer-layout"
 import GetInTouch from "../layouts/get-in-touch"
 import HeaderLayout from "../layouts/header-layout"
@@ -94,8 +95,8 @@ const clientPages = () => {
 		ReactDOM.render(<GetInTouch />, element)
 	}
 	if (document.querySelector("#work-service-client-contact-faq")) {
-		ReactDOM.render(<h1>FAQs</h1>, document.querySelector("#work-service-client-contact-faq"))
+		ReactDOM.render(<FAQ />, document.querySelector("#work-service-client-contact-faq"))
 	}
 }
 
-export default clientPages
+export { clientPages }

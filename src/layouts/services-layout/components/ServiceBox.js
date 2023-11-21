@@ -21,7 +21,7 @@ const ServiceBox = ({ index }) => {
 	}, [index])
 
 	return (
-		<div className="relative z-0 flex flex-col items-start justify-end p-4 mx-4 overflow-hidden shadow-md bg-zinc-200 h-80">
+		<div className="relative z-0 flex flex-col items-start justify-end p-2 md:p-4 mx-2 md:mx-4 overflow-hidden shadow-md bg-zinc-200 h-40 md:h-80 rounded-md">
 			<div className={`absolute inset-0 before:absolute before:content-[''] before:inset-0 before:bg-gradient-to-b ${cls} -z-10`}>
 				<img
 					src={service_img}
@@ -29,10 +29,10 @@ const ServiceBox = ({ index }) => {
 				/>
 			</div>
 			<div className="relative z-10 p-2">
-				<h4 className="pb-0 mb-0 text-2xl font-sansation-bold text-[#EEEBF4] w-1/2">Dry Cleaning</h4>
+				<h4 className="pb-0 mb-0 text-sm md:text-2xl font-sansation-bold text-[#EEEBF4] w-1/2">Dry Cleaning</h4>
 			</div>
 		</div>
 	)
 }
 
-export default ServiceBox
+export { ServiceBox }

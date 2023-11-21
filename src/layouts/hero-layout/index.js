@@ -1,11 +1,14 @@
 import aboutBg from "../../assets/imgs/page-about.png"
 import contactBg from "../../assets/imgs/page-contact.png"
+import ThemeProvider from "../../context/theme/ThemeProvider"
+import AuthLayout from "../auth-layout"
 import HeroHome from "./components/HeroHome"
 import HeroPage from "./components/HeroPage"
 
 const HeroLayout = ({ page, heading }) => {
 	return (
-		<>
+		<ThemeProvider>
+			<AuthLayout />
 			{page == `home` && <HeroHome />}
 			{page == `about` && (
 				<HeroPage
@@ -19,7 +22,7 @@ const HeroLayout = ({ page, heading }) => {
 					bg={contactBg}
 				/>
 			)}
-		</>
+		</ThemeProvider>
 	)
 }
 

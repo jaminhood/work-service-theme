@@ -1,11 +1,14 @@
-import useDeviceType from "../../hooks/useDeviceType"
-import DesktopHeader from "./components/DesktopHeader"
-import MobileHeader from "./components/MobileHeader"
+import ThemeProvider from "../../context/theme/ThemeProvider"
+import AuthLayout from "../auth-layout"
+import { HeaderContent } from "./components/HeaderContent"
 
 const HeaderLayout = () => {
-	const { isMobile } = useDeviceType()
-
-	return <>{isMobile ? <MobileHeader /> : <DesktopHeader />}</>
+	return (
+		<ThemeProvider>
+			<AuthLayout />
+			<HeaderContent />
+		</ThemeProvider>
+	)
 }
 
 export default HeaderLayout

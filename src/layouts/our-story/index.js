@@ -1,19 +1,24 @@
 import aboutBg from "../../assets/imgs/our-story.png"
+import useDeviceType from "../../hooks/useDeviceType"
 import Container from "../../shared/Container"
 
 const OurStory = () => {
+	const { isMobile } = useDeviceType()
+
 	return (
 		<div className="py-20 bg-[#EEEBF4]">
 			<Container>
-				<div className="grid grid-cols-3 gap-16 items-center">
-					<div className="col-span-1">
-						<img
-							src={aboutBg}
-							alt=""
-							className="object-cover w-full"
-						/>
-					</div>
-					<div className="col-span-2">
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-16 items-center">
+					{!isMobile && (
+						<div className="col-span-1">
+							<img
+								src={aboutBg}
+								alt=""
+								className="object-cover w-full"
+							/>
+						</div>
+					)}
+					<div className="col-span-1 md:col-span-2">
 						<div className="">
 							<h2 className="text-3xl font-bold leading-8 tracking-tight text-main-primary sm:text-4xl sm:leading-10">Our Story</h2>
 							<p className="mt-3 text-base text-gray-500 md:mt-5 md:text-xl font-jost-regular">
@@ -24,6 +29,15 @@ const OurStory = () => {
 							</p>
 						</div>
 					</div>
+					{isMobile && (
+						<div className="col-span-1">
+							<img
+								src={aboutBg}
+								alt=""
+								className="object-cover w-full"
+							/>
+						</div>
+					)}
 				</div>
 			</Container>
 		</div>

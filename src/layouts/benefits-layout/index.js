@@ -17,7 +17,7 @@ const BenefitsLayout = () => {
 	return (
 		<div className="relative px-4 py-20 bg-[#D4CBED]">
 			<Container>
-				<h2 className="text-5xl text-center font-sansation-bold text-main-primary mb-4">Why Choose Us?</h2>
+				<h2 className="text-4xl md:text-5xl text-center font-sansation-bold text-main-primary mb-4">Why Choose Us?</h2>
 				<div className="grid items-center grid-cols-1 gap-8 md:grid-cols-3">
 					{[1, 2, 3].map(benefit => (
 						<BenefitsCard

@@ -5,7 +5,7 @@ import { ContactInfo } from "./components/ContactInfo"
 const GetInTouch = () => {
 	return (
 		<ContentBox cls="bg-[#EEEBF4]">
-			<div className="grid items-center grid-cols-2 gap-24">
+			<div className="grid items-center grid-cols-1 md:grid-cols-2 gap-24">
 				<ContactFormSection />
 				<ContactInfo />
 			</div>

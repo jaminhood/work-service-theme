@@ -1,7 +1,9 @@
-import clientPages from "./clientPages"
+import { clientPages } from "./clientPages"
+import { customerPages } from "./customerPages"
 
 const pages = () => {
 	clientPages()
+	customerPages()
 }
 
-export default pages
+export { pages }

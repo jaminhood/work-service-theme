@@ -8,7 +8,7 @@ const TeamLayout = () => {
 			<Heading>
 				Meet The <span className="underline font-sansation-bold">Team</span>
 			</Heading>
-			<div className="w-full max-w-xl grid grid-cols-3 gap-20 my-4 mx-auto">
+			<div className="w-full max-w-xl grid grid-cols-3 gap-8 md:gap-20 my-4 mx-auto">
 				{[0, 1, 2].map(data => (
 					<TeamBox key={data} />
 				))}

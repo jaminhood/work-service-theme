@@ -1,6 +1,6 @@
-// import axios from "axios"
-// import { useEffect, useState } from "react"
-import ServiceBox from "./ServiceBox"
+import axios from "axios"
+import { useEffect, useState } from "react"
+import { ServiceSlider } from "./ServiceSlider"
 // import { SITE_URL } from "../../../../constants"
 
 const HomeServicesContent = () => {
@@ -21,13 +21,8 @@ const HomeServicesContent = () => {
 			<div className="col-span-1">
 				<h2 className="mb-8 text-4xl font-sansation-bold text-main-primary">Featured Services.</h2>
 			</div>
-			<div className="grid grid-cols-3 gap-4">
-				{[1, 2, 3].map(data => (
-					<ServiceBox
-						key={data}
-						index={data}
-					/>
-				))}
+			<div className="w-full overflow-hidden">
+				<ServiceSlider />
 			</div>
 		</div>
 	)

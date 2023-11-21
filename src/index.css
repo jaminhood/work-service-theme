@@ -43,3 +43,22 @@
 	height: 100%;
 	object-fit: cover;
 }
+
+.customer__menu--link {
+	@apply font-sansation-bold capitalize text-zinc-50 w-full flex gap-4 items-center text-lg py-2 px-2 rounded-full;
+}
+
+.customer__menu--link:hover,
+.customer__menu--link.active {
+	@apply bg-zinc-50 text-main-primary;
+}
+
+.customer__menu--link:hover .icon__span,
+.customer__menu--link.active .icon__span {
+	@apply bg-main-primary;
+}
+
+.customer__menu--link:hover svg path,
+.customer__menu--link.active svg path {
+	fill: #eeebf4;
+}

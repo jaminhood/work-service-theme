@@ -12,8 +12,8 @@ const JoinUsLayout = () => {
 				/>
 			</div>
 			<ContentBox>
-				<div className="grid grid-cols-3 gap-24 items-center">
-					<div className="col-span-2">
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-24 items-center">
+					<div className="col-span-1 md:col-span-2">
 						<div className="">
 							<h2 className="text-3xl font-bold leading-8 tracking-tight text-main-primary sm:text-4xl sm:leading-10">Join Us Today</h2>
 							<p className="mt-3 text-base text-gray-500 md:mt-5 md:text-xl font-jost-regular">
