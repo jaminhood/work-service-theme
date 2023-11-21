@@ -1,4 +1,5 @@
 import { CustomerProfilePersonalData } from "./CustomerProfilePersonalData"
+import { CustomerProfileRequestForm } from "./CustomerProfileRequestForm"
 import { CustomerProfileRequests } from "./CustomerProfileRequests"
 import { CustomerProfileResetPassword } from "./CustomerProfileResetPassword"
 import { CustomerProfileSecurity } from "./CustomerProfileSecurity"
@@ -13,8 +14,10 @@ const CustomerProfileRender = () => {
 			return <CustomerProfileSecurity />
 		case `reset-password`:
 			return <CustomerProfileResetPassword />
-		case ``:
+		case `my-requests`:
 			return <CustomerProfileRequests />
+		case ``:
+			return <CustomerProfileRequestForm />
 	}
 }
 
