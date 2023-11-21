@@ -12,7 +12,7 @@ const CustomerDashboardContentCategories = () => {
 
 	return (
 		<CustomerDashboardContentBox {...params}>
-			<div className="grid grid-cols-4 gap-12">
+			<div className="grid grid-cols-4 md:gap-12 gap-4">
 				{categories.map(data => (
 					<CustomerDashboardContentCategoryBox
 						key={data}

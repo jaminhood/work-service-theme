@@ -17,7 +17,7 @@ const CustomerProvider = props => {
 		<CustomerContext.Provider value={providerValues}>
 			<div className="flex h-screen">
 				<Sidebar account="customer" />
-				<div className="w-[calc(100%-25rem)] h-screen">{props.children}</div>
+				<div className="w-full md:w-[calc(100%-25rem)] h-screen">{props.children}</div>
 			</div>
 		</CustomerContext.Provider>
 	)
