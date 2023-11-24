@@ -1,11 +1,9 @@
 import Slider from "react-slick"
-import "slick-carousel/slick/slick-theme.css"
-import "slick-carousel/slick/slick.css"
 import { ServiceBox } from "./ServiceBox"
 
 const settings = {
 	dots: false,
-	arrows: true,
+	arrows: false,
 	infinite: true,
 	autoplay: true,
 	autoplaySpeed: 3000,
@@ -24,16 +22,29 @@ const settings = {
 	],
 }
 
-const ServiceSlider = () => {
-	return (
+const ServiceSlider = ({ services }) => {
+	return services.length > 2 ? (
 		<Slider {...settings}>
-			{[1, 2, 3].map(data => (
-				<ServiceBox
-					key={data}
-					index={data}
-				/>
+			{services.map((service, idx) => (
+				<div key={service.serviceID}>
+					<ServiceBox
+						service={service}
+						index={idx}
+					/>
+				</div>
 			))}
 		</Slider>
+	) : (
+		<div className="grid grid-cols-2 gap-8">
+			{services.map((service, idx) => (
+				<div key={service.serviceID}>
+					<ServiceBox
+						service={service}
+						index={idx}
+					/>
+				</div>
+			))}
+		</div>
 	)
 }
 

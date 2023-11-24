@@ -1,20 +1,16 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+import { SITE_URL } from "../../../utils"
 import { ServiceSlider } from "./ServiceSlider"
-// import { SITE_URL } from "../../../../constants"
 
 const HomeServicesContent = () => {
-	//  const [services, setServices] = useState([])
+	const [services, setServices] = useState([])
 
-	//  const getAllServices = async () => {
-	//   await axios.get(`${SITE_URL}wp-json/ws-api/v1/services/get-all`).then((res) => {
-	//    setServices(res.data)
-	//   })
-	//  }
+	const getAllServices = async () => await axios.get(`${SITE_URL}wp-json/ws-api/v1/admin/services`).then(res => setServices(res.data))
 
-	//  useEffect(async () => {
-	//   await getAllServices()
-	//  }, [])
+	useEffect(() => {
+		getAllServices()
+	}, [])
 
 	return (
 		<div className="grid items-center grid-cols-1">
@@ -22,7 +18,7 @@ const HomeServicesContent = () => {
 				<h2 className="mb-8 text-4xl font-sansation-bold text-main-primary">Featured Services.</h2>
 			</div>
 			<div className="w-full overflow-hidden">
-				<ServiceSlider />
+				<ServiceSlider services={services} />
 			</div>
 		</div>
 	)

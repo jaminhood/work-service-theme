@@ -1,10 +1,8 @@
-import banner_img from "../../../assets/imgs/news-banner.png"
-
-const NewsSlide = () => {
+const NewsSlide = ({ news }) => {
 	return (
-		<div className="w-full h-full">
+		<div className="w-full">
 			<img
-				src={banner_img}
+				src={news.banner_img}
 				alt=""
 				className="object-cover w-full"
 			/>

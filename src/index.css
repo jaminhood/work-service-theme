@@ -1,21 +1,21 @@
 @font-face {
 	font-family: "sansationBold";
-	src: url("./assets/fonts/sansation/Sansation_Bold.ttf") format("truetype");
+	src: url("./assets/fonts/sansation/Sansation_Bold.ttf");
 }
 
 @font-face {
 	font-family: "sansationRegular";
-	src: url("./assets/fonts/sansation/Sansation_Regular.ttf") format("truetype");
+	src: url("./assets/fonts/sansation/Sansation_Regular.ttf");
 }
 
 @font-face {
 	font-family: "sansationLight";
-	src: url("./assets/fonts/sansation/Sansation_Light.ttf") format("truetype");
+	src: url("./assets/fonts/sansation/Sansation_Light.ttf");
 }
 
 @font-face {
 	font-family: "jostRegular";
-	src: url("./assets/fonts/jost/static/Jost-Regular.ttf") format("truetype");
+	src: url("./assets/fonts/jost/static/Jost-Regular.ttf");
 }
 
 @tailwind base;
@@ -26,26 +26,8 @@
 	@apply box-border p-0 m-0;
 }
 
-.swiper {
-	width: 100%;
-	height: 100%;
-}
-
-.swiper-slide {
-	text-align: center;
-	font-size: 18px;
-	background: #fff;
-}
-
-.swiper-slide img {
-	display: block;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-}
-
 .customer__menu--link {
-	@apply font-sansation-bold capitalize text-zinc-50 w-full flex gap-4 items-center text-lg py-2 px-2 rounded-full;
+	@apply flex items-center w-full gap-4 px-2 py-2 text-lg capitalize rounded-full font-sansation-bold text-zinc-50;
 }
 
 .customer__menu--link:hover,

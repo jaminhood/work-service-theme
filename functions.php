@@ -1,6 +1,16 @@
 <?php
 
-define('WST_PATH', trailingslashit(plugin_dir_path(__FILE__)));
+define('WST_PATH', trailingslashit(get_stylesheet_directory()));
+
+function work_service_load_custom_fonts()
+{
+  wp_enqueue_style('sansationBold', get_theme_file_uri('/assets/fonts/sansation/Sansation_Bold.ttf'));
+  wp_enqueue_style('sansationRegular', get_theme_file_uri('/assets/fonts/sansation/Sansation_Regular.ttf'));
+  wp_enqueue_style('sansationLight', get_theme_file_uri('/assets/fonts/sansation/Sansation_Light.ttf'));
+  wp_enqueue_style('jostRegular', get_theme_file_uri('/assets/fonts/jost/static/Jost-Regular.ttf'));
+}
+
+add_action('wp_enqueue_scripts', 'work_service_load_custom_fonts');
 
 function work_service_load_assets()
 {
