@@ -1,6 +1,6 @@
 const NewsSlide = ({ news }) => {
 	return (
-		<div className="w-full">
+		<div className="w-full h-[70vh]">
 			<img
 				src={news.banner_img}
 				alt=""

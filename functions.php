@@ -59,22 +59,6 @@ function work_service_template_include($template)
     // }
   }
 
-  if (get_query_var('service') != false && get_query_var('service') != '') {
-    if (!is_user_logged_in()) {
-      wp_redirect(site_url('/'));
-    } else {
-      return WST_PATH . 'includes/pages/customer/ws-service-page.php';
-    }
-  }
-
-  if (get_query_var('category') != false && get_query_var('category') != '') {
-    if (!is_user_logged_in()) {
-      wp_redirect(site_url('/'));
-    } else {
-      return WST_PATH . 'includes/pages/customer/ws-category-page.php';
-    }
-  }
-
   return $template;
 }
 

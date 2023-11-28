@@ -32,7 +32,7 @@ const NewsSlider = () => {
 	}, [])
 
 	return (
-		<div className="w-full overflow-hidden rounded-3xl">
+		<div className="w-full h-[70vh] overflow-hidden rounded-3xl">
 			<Slider {...settings}>
 				{news.map(data => (
 					<NewsSlide
@@ -46,3 +46,4 @@ const NewsSlider = () => {
 }
 
 export { NewsSlider }
+
