@@ -33,17 +33,18 @@ const NewsSlider = () => {
 
 	return (
 		<div className="w-full h-[70vh] overflow-hidden rounded-3xl">
-			<Slider {...settings}>
-				{news.map(data => (
-					<NewsSlide
-						key={data.newsID}
-						news={data}
-					/>
-				))}
-			</Slider>
+			{news.length > 0 && (
+				<Slider {...settings}>
+					{news?.map(data => (
+						<NewsSlide
+							key={data.newsID}
+							news={data}
+						/>
+					))}
+				</Slider>
+			)}
 		</div>
 	)
 }
 
 export { NewsSlider }
-

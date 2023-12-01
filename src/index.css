@@ -44,3 +44,7 @@
 .customer__menu--link.active svg path {
 	fill: #eeebf4;
 }
+
+.slick-track {
+	display: flex !important;
+}

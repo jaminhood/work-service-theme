@@ -16,7 +16,6 @@ const settings = {
 			settings: {
 				slidesToShow: 2,
 				slidesToScroll: 1,
-				initialSlide: 2,
 			},
 		},
 	],
@@ -26,12 +25,11 @@ const ServiceSlider = ({ services }) => {
 	return services.length > 2 ? (
 		<Slider {...settings}>
 			{services.map((service, idx) => (
-				<div key={service.serviceID}>
-					<ServiceBox
-						service={service}
-						index={idx}
-					/>
-				</div>
+				<ServiceBox
+					service={service}
+					index={idx}
+					key={service.serviceID}
+				/>
 			))}
 		</Slider>
 	) : (
