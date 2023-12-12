@@ -8,7 +8,7 @@ const Terms = () => {
 		openedModal === `terms` && (
 			<Modal toggleOpen={handleCloseModal}>
 				<div className="py-12 px-8 h-[90vh]">
-					<h2 className="text-3xl font-bold leading-8 tracking-tight text-main-primary sm:text-4xl sm:leading-10">Terms</h2>
+					<h2 className="text-3xl font-bold text-center leading-8 tracking-tight text-main-primary sm:text-4xl sm:leading-10">Terms</h2>
 					<p className="mt-3 text-base text-gray-500 md:mt-5 md:text-lg font-jost-regular">
 						Welcome to Work service! These Terms of Use outline the terms and conditions that govern your use of our innovative app and platform. By accessing or using the Work service app, you agree to be
 						bound by these Terms of Use. Please read them carefully before proceeding.

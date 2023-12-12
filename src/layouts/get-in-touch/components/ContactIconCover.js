@@ -1,11 +1,14 @@
 import { ContactIconWrapper } from "./ContactIconWrapper"
 
-const ContactIconCover = ({ iconContent, info }) => {
+const ContactIconCover = ({ iconContent, info, link }) => {
 	return (
-		<p className="flex gap-4 items-center text-main-primary py-2">
+		<a
+			href={link}
+			target="_blank"
+			className="flex items-center gap-4 py-2 text-main-primary">
 			<ContactIconWrapper iconContent={iconContent} />
-			<span className="font-jost-regular text-xl">{info}</span>
-		</p>
+			<span className="text-xl font-jost-regular">{info}</span>
+		</a>
 	)
 }
 

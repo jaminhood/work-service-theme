@@ -7,7 +7,7 @@ const FooterLogo = () => {
 			<a href={SITE_URL}>
 				<img
 					src={logo}
-					className="object-cover h-12"
+					className="object-cover h-8"
 				/>
 			</a>
 		</div>

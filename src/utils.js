@@ -7,8 +7,8 @@ import hero_3 from "./assets/imgs/hero-3.png"
 import hero_4_mobile from "./assets/imgs/hero-4-mobile.png"
 import hero_4 from "./assets/imgs/hero-4.png"
 
-// export const SITE_URL = `http://localhost/dev/`
-export const SITE_URL = `http://myworkservice.com/`
+export const SITE_URL = `http://localhost/dev/`
+// export const SITE_URL = `http://myworkservice.com/`
 
 export const headerNavLinks = [
 	{

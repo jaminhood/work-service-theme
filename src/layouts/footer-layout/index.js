@@ -24,10 +24,10 @@ const FooterLayout = () => {
 		<ThemeProvider>
 			<Terms />
 			<AuthLayout />
-			<footer className="relative overflow-hidden">
+			<footer className="relative text-center overflow-hidden">
 				<FooterBg />
 				<ContentBox>
-					<div class="flex justify-between items-center flex-col md:flex-row">
+					<div class="flex justify-between text-center items-center flex-col md:flex-row">
 						<FooterLogo />
 						<FooterMenu />
 						<FooterSocial />

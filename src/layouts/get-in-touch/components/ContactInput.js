@@ -1,5 +1,5 @@
 const ContactInput = props => {
-	const { id, type, placeholder, label } = props
+	const { id, type, placeholder, label, formData, handleInput } = props
 
 	return (
 		<div className="col-span-1 py-2">
@@ -15,6 +15,8 @@ const ContactInput = props => {
 					id={id}
 					autoComplete={id}
 					placeholder={placeholder}
+					value={formData[id]}
+					onInput={handleInput}
 					required
 					className="block w-full px-4 py-3 focus:outline-[0] font-jost-regular placeholder:font-jost-regular shadow-sm sm:text-sm border-gray-300 rounded-md"
 				/>

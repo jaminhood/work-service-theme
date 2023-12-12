@@ -10,6 +10,7 @@ const ContactCard = ({ title, text, iconContent, children }) => {
 						<ContactIconCover
 							iconContent={data.iconContent}
 							info={data.info}
+							link={data.link}
 							key={idx}
 						/>
 				  ))
