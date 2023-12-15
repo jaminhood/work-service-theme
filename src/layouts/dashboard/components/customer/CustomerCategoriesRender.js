@@ -7,7 +7,7 @@ const CustomerCategoriesRender = () => {
 	const { openedCategory } = useCustomerContext()
 	const { isMobile } = useDeviceType()
 
-	if (openedCategory.includes(`menu`)) {
+	if (openedCategory.includes(`menu_no`)) {
 		return <CustomerCategoriesRenderMenu />
 	}
 

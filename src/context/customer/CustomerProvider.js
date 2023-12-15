@@ -42,8 +42,23 @@ const CustomerProvider = props => {
 		return data
 	}
 
+	const getCategories = async () => {
+		const { data } = await axios.get(`${SITE_URL}wp-json/ws-api/v1/categories`, getCred())
+		return data
+	}
+
+	const getSubCategories = async id => {
+		const { data } = await axios.get(`${SITE_URL}wp-json/ws-api/v1/sub-categories/category?category_id=${id}`, getCred())
+		return data
+	}
+
 	const getRequestForm = async () => {
 		const { data } = await axios.get(`${SITE_URL}wp-json/ws-api/v1/requests`, getCred())
+		return data
+	}
+
+	const getChatList = async () => {
+		const { data } = await axios.get(`${SITE_URL}wp-json/ws-api/v1/chats`, getCred())
 		return data
 	}
 
@@ -82,7 +97,10 @@ const CustomerProvider = props => {
 		openedCategory,
 		openedProfile,
 		getProfile,
+		getChatList,
 		getRequestForm,
+		getCategories,
+		getSubCategories,
 		submitProfile,
 		handleLogout,
 		handleOpenCategory,
