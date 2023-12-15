@@ -13,9 +13,7 @@ const CustomerDashboardContentServices = () => {
 		getAllServices()
 	}, [])
 
-	const btnAction = () => {}
-
-	const params = { heading: `Featured Services`, btnAction, btnValue: `See More` }
+	const params = { heading: `Featured Services` }
 
 	return (
 		<CustomerDashboardContentBox {...params}>

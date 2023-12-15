@@ -14,7 +14,7 @@ const AuthLayout = () => {
 		openedModal.includes(`auth`) && (
 			<Modal toggleOpen={handleCloseModal}>
 				<div className="grid grid-cols-2 h-[90vh] items-center">
-					<div className="col-span-1">
+					<div className="col-span-1 h-[90vh]">
 						<img
 							src={authImg}
 							alt="Auth"

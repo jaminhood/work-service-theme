@@ -6,7 +6,7 @@ const Input = props => {
 			{label !== `` && (
 				<label
 					for={id}
-					className="block text-base font-medium text-gray-700 font-sansation-bold cursor-pointer">
+					className="block text-base font-medium text-gray-700 font-jost-regular cursor-pointer">
 					{label}
 				</label>
 			)}

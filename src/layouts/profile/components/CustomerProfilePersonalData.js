@@ -3,7 +3,7 @@ import { CustomerProfilePersonalDataForm } from "./CustomerProfilePersonalDataFo
 const CustomerProfilePersonalData = () => {
 	return (
 		<>
-			<h3 className="text-3xl text-main-primary font-sansation-bold text-center capitalize">Personal Data</h3>
+			<h3 className="text-2xl text-main-primary font-sansation-bold text-center capitalize">Personal Data</h3>
 			<CustomerProfilePersonalDataForm />
 		</>
 	)

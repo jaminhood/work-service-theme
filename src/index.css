@@ -27,7 +27,7 @@
 }
 
 .customer__menu--link {
-	@apply flex items-center w-full gap-4 px-2 py-2 text-lg capitalize rounded-full font-sansation-bold text-zinc-50;
+	@apply flex items-center w-full gap-8 px-2 py-2 text-lg capitalize rounded-full font-sansation-bold text-zinc-50;
 }
 
 .customer__menu--link:hover,

@@ -4,22 +4,22 @@ import { CustomerProfileSectionContainer } from "./CustomerProfileSectionContain
 const CustomerProfileSection = () => {
 	const generalLinks = [
 		{
-			icon: `work-service`,
+			icon: `user`,
 			title: `Personal Data`,
 			link: `personal-data`,
 		},
 		{
-			icon: `work-service`,
+			icon: `shield`,
 			title: `Security`,
 			link: `security`,
 		},
 		{
-			icon: `work-service`,
+			icon: `my-requests`,
 			title: `My Requests`,
 			link: `my-requests`,
 		},
 		{
-			icon: `work-service`,
+			icon: `invite-a-service`,
 			title: `Invite A Friend`,
 			link: `invite-a-friend`,
 		},
@@ -35,11 +35,6 @@ const CustomerProfileSection = () => {
 			icon: `work-service`,
 			title: `FAQ`,
 			link: `faq`,
-		},
-		{
-			icon: `work-service`,
-			title: `Terms & Conditions`,
-			link: `terms-conditions`,
 		},
 	]
 

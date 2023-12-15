@@ -16,7 +16,7 @@ const CustomerMenu = () => {
 						<span className="w-[2.5rem] h-[2.5rem] rounded-full bg-zinc-50 flex justify-center items-center icon__span">
 							<Icon {...{ name: link.icon, width: "18px", height: "16px", fill: "#5E4A96" }} />
 						</span>
-						<span className="font-sansation-bold capitalize">{link.render}</span>
+						<span className="font-jost-regular capitalize">{link.render}</span>
 					</a>
 				</li>
 			))}

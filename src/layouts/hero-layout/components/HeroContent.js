@@ -2,12 +2,21 @@ import useThemeContext from "../../../context/theme/useThemeContext"
 import useDeviceType from "../../../hooks/useDeviceType"
 import Container from "../../../shared/Container"
 import { Btn } from "../../../shared/btn"
+import { SITE_URL } from "../../../utils"
 
 const HeroContent = () => {
 	const { isMobile } = useDeviceType()
 	const { handleOpenModal } = useThemeContext()
 
-	const handleClick = () => handleOpenModal(`auth-signup`)
+	const handleClick = () => {
+		const token = localStorage.getItem(`ws-token`)
+		if (!token || token === ``) {
+			handleOpenModal(`auth-signin`)
+			return
+		}
+
+		location.replace(`${SITE_URL}/ws-customer/dashboard/`)
+	}
 
 	return (
 		<Container>

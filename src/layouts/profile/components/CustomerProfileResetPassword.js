@@ -5,8 +5,8 @@ import { InputField } from "../../../shared/input-field"
 const CustomerProfileResetPassword = () => {
 	return (
 		<div className="grid grid-cols-1 overflow-y-auto">
-			<h2 className="text-main-primary text-center font-sansation-bold text-4xl">Reset Password</h2>
-			<div className="text-center py-2">
+			<h2 className="text-main-primary text-center font-sansation-bold text-2xl">Reset Password</h2>
+			<div className="text-center py-6 w-full flex justify-center items-center">
 				<Icon
 					name="unlock"
 					width="95px"
@@ -14,11 +14,11 @@ const CustomerProfileResetPassword = () => {
 					fill="#5E4A96"
 				/>
 			</div>
-			<h2 className="text-main-primary text-center font-sansation-bold text-4xl">
+			<h2 className="text-main-primary text-center font-sansation-bold text-2xl">
 				Reset <br /> Password?
 			</h2>
 			<div className="col-span-1 py-2">
-				<p className="text-base text-center font-medium text-gray-700 font-sansation-bold">Enter a new password. Please make sure it is different from the old one.</p>
+				<p className="text-base text-center font-medium text-gray-700 font-jost-regular">Enter a new password. Please make sure it is different from the old one.</p>
 			</div>
 			<InputField
 				name="password"
