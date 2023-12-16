@@ -4,10 +4,10 @@ import { CustomerChatBox } from "./CustomerChatBox"
 import { CustomerChatContainer } from "./CustomerChatContainer"
 
 const CustomerChatContent = () => {
-	const { getChatList } = useCustomerContext()
+	const { getOrdersList } = useCustomerContext()
 
 	const getData = async () => {
-		const data = await getChatList()
+		const data = await getOrdersList()
 		console.log(data)
 	}
 

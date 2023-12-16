@@ -5,7 +5,7 @@ import { CustomerCategoriesRequestCTA } from "./CustomerCategoriesRequestCTA"
 const CustomerCategories = () => {
 	return (
 		<>
-			<h3 className="text-3xl text-main-primary font-sansation-bold text-center">Categories</h3>
+			<h3 className="text-2xl text-center text-main-primary font-sansation-bold">Categories</h3>
 			<CustomerCategoriesMenu />
 			<CustomerCategoriesRequestCTA />
 		</>
@@ -13,3 +13,4 @@ const CustomerCategories = () => {
 }
 
 export { CustomerCategories }
+

@@ -9,6 +9,8 @@ const CustomerProvider = props => {
 	const [openedProfile, setOpenedProfile] = useState(`personal-data`)
 	const [token, setToken] = useState(``)
 	const [profile, setProfile] = useState([])
+	const [address, setAddress] = useState([])
+	const [services, setServices] = useState([])
 
 	const getCred = (type = `json`) => ({
 		headers: {
@@ -36,10 +38,29 @@ const CustomerProvider = props => {
 			}
 		})
 
+	const handleAddressForm = async formData =>
+		await axios.post(`${SITE_URL}wp-json/ws-api/v1/address`, formData, getCred()).then(res => {
+			if (res.data === `Upload Successful`) {
+				location.reload()
+			}
+		})
+
+	const handleOrderForm = async formData => await axios.post(`${SITE_URL}wp-json/ws-api/v1/bookings`, formData, getCred()).then(() => location.replace(`${SITE_URL}/ws-customer/chat/`))
+
 	const getProfile = async () => {
 		const { data } = await axios.get(`${SITE_URL}wp-json/ws-api/v1/profile`, getCred())
 		setProfile(data)
 		return data
+	}
+
+	const getAddress = async () => {
+		const { data } = await axios.get(`${SITE_URL}wp-json/ws-api/v1/address`, getCred())
+		setAddress(data)
+	}
+
+	const getAllServices = async () => {
+		const { data } = await axios.get(`${SITE_URL}wp-json/ws-api/v1/services`, getCred())
+		setServices(data)
 	}
 
 	const getCategories = async () => {
@@ -52,6 +73,11 @@ const CustomerProvider = props => {
 		return data
 	}
 
+	const getServices = async id => {
+		const { data } = await axios.get(`${SITE_URL}wp-json/ws-api/v1/services/sub-category?sub_category_id=${id}`, getCred())
+		return data
+	}
+
 	const getRequestForm = async () => {
 		const { data } = await axios.get(`${SITE_URL}wp-json/ws-api/v1/requests`, getCred())
 		return data
@@ -59,6 +85,11 @@ const CustomerProvider = props => {
 
 	const getChatList = async () => {
 		const { data } = await axios.get(`${SITE_URL}wp-json/ws-api/v1/chats`, getCred())
+		return data
+	}
+
+	const getOrdersList = async () => {
+		const { data } = await axios.get(`${SITE_URL}wp-json/ws-api/v1/bookings`, getCred())
 		return data
 	}
 
@@ -82,6 +113,8 @@ const CustomerProvider = props => {
 
 	useEffect(() => {
 		getProfile()
+		getAddress()
+		getAllServices()
 	}, [])
 
 	const handleOpenCategory = value => setOpenedCategory(value)
@@ -94,13 +127,17 @@ const CustomerProvider = props => {
 
 	const providerValues = {
 		profile,
+		address,
+		services,
 		openedCategory,
 		openedProfile,
 		getProfile,
 		getChatList,
 		getRequestForm,
+		getOrdersList,
 		getCategories,
 		getSubCategories,
+		getServices,
 		submitProfile,
 		handleLogout,
 		handleOpenCategory,
@@ -108,6 +145,8 @@ const CustomerProvider = props => {
 		handleCloseCategory,
 		handleCloseProfile,
 		handleRequestForm,
+		handleAddressForm,
+		handleOrderForm,
 	}
 
 	return (

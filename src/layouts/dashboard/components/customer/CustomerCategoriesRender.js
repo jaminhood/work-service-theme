@@ -1,7 +1,10 @@
 import useCustomerContext from "../../../../context/customer/useCustomerContext"
 import useDeviceType from "../../../../hooks/useDeviceType"
+import { CustomerProfileRequestForm } from "../../../profile/components/CustomerProfileRequestForm"
 import { CustomerCategories } from "./CustomerCategories"
+import { CustomerCategoriesAddressForm } from "./CustomerCategoriesAddressForm"
 import { CustomerCategoriesRenderMenu } from "./CustomerCategoriesRenderMenu"
+import { CustomerCategoriesServiceOrderForm } from "./CustomerCategoriesServiceOrderForm"
 
 const CustomerCategoriesRender = () => {
 	const { openedCategory } = useCustomerContext()
@@ -12,7 +15,15 @@ const CustomerCategoriesRender = () => {
 	}
 
 	if (openedCategory === `request-form`) {
-		return <div>{openedCategory}</div>
+		return <CustomerProfileRequestForm />
+	}
+
+	if (openedCategory === `address-form`) {
+		return <CustomerCategoriesAddressForm />
+	}
+
+	if (openedCategory.includes(`service`)) {
+		return <CustomerCategoriesServiceOrderForm />
 	}
 
 	if (isMobile && openedCategory === `categories`) {

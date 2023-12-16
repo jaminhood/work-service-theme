@@ -1,5 +1,3 @@
-import React from "react"
-
 const CustomerChatContainer = ({ title, children }) => {
 	return (
 		<div className="py-4">

@@ -2,8 +2,8 @@ import { useEffect, useState } from "react"
 import useCustomerContext from "../../../../context/customer/useCustomerContext"
 import { CustomerCategoriesRenderMenuSubCategoryBox } from "./CustomerCategoriesRenderMenuSubCategoryBox"
 
-const CustomerCategoriesRenderMenuSubCategories = ({ categoryID }) => {
-	const { openedCategory, handleOpenCategory, getSubCategories } = useCustomerContext()
+const CustomerCategoriesRenderMenuSubCategories = ({ ID, categoryID, setSubCategoryID }) => {
+	const { getSubCategories } = useCustomerContext()
 	const [subCategories, setSubCategories] = useState([])
 
 	const getData = async () => {
@@ -24,14 +24,10 @@ const CustomerCategoriesRenderMenuSubCategories = ({ categoryID }) => {
 				{subCategories.map((subCategory, idx) => (
 					<CustomerCategoriesRenderMenuSubCategoryBox
 						key={idx}
+						ID={ID}
 						subCategory={subCategory}
+						setSubCategoryID={setSubCategoryID}
 					/>
-					// <p
-
-					// 	className={`cursor-pointer flex flex-col gap-2 text-center items-center text-main-primary font-sansation-bold capitalize text-sm hover:bg-main-primary hover:text-zinc-50 transition-all ease-in-out duration-300`}
-					// 	onClick={() => {}}>
-					// 	{category.subCategoryName}
-					// </p>
 				))}
 			</div>
 		</div>
