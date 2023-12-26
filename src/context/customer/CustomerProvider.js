@@ -1,8 +1,8 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+import { CustomerContext } from ".."
 import { Sidebar } from "../../shared/sidebar"
 import { SITE_URL } from "../../utils"
-import { CustomerContext } from "./CustomerContext"
 
 const CustomerProvider = props => {
 	const [openedCategory, setOpenedCategory] = useState(``)
@@ -11,6 +11,8 @@ const CustomerProvider = props => {
 	const [profile, setProfile] = useState([])
 	const [address, setAddress] = useState([])
 	const [services, setServices] = useState([])
+
+	document.title = `Customer | Work Service`
 
 	const getCred = (type = `json`) => ({
 		headers: {
@@ -49,6 +51,10 @@ const CustomerProvider = props => {
 
 	const getProfile = async () => {
 		const { data } = await axios.get(`${SITE_URL}wp-json/ws-api/v1/profile`, getCred())
+		if (data.role === `expert`) {
+			location.replace(`${SITE_URL}/ws-expert/dashboard/`)
+			return false
+		}
 		setProfile(data)
 		return data
 	}

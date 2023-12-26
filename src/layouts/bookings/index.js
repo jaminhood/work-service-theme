@@ -1,10 +1,8 @@
+import ThemeProvider from "../../context/theme/ThemeProvider"
 import { CustomerBookings } from "./components/customer/CustomerBookings"
 
 const Bookings = ({ account }) => {
-	switch (account) {
-		case `customer`:
-			return <CustomerBookings />
-	}
+	return <ThemeProvider>{account === `customer` ? <CustomerBookings /> : <></>}</ThemeProvider>
 }
 
 export { Bookings }

@@ -1,5 +1,5 @@
 const Password = props => {
-	const { id, type, placeholder, label, value, handleInput } = props
+	const { id, type, placeholder, label, disabled, value, handleInput } = props
 
 	return (
 		<div className="col-span-1 py-2">
@@ -17,6 +17,7 @@ const Password = props => {
 					id={id}
 					autoComplete={id}
 					placeholder={placeholder}
+					disabled={disabled ? disabled : false}
 					value={value}
 					onInput={handleInput}
 					required

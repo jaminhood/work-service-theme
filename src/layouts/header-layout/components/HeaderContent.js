@@ -1,5 +1,3 @@
-import mobileLogo from "../../../assets/imgs/logo-mobile.png"
-import desktopLogo from "../../../assets/imgs/word-logo.png"
 import useDeviceType from "../../../hooks/useDeviceType"
 import Container from "../../../shared/Container"
 import { DesktopMenu } from "./DesktopMenu"
@@ -13,7 +11,7 @@ const HeaderContent = () => {
 		<div class="absolute top-0 left-0 z-50 w-full bg-transparent text-zinc-50 flex items-center justify-center">
 			<Container>
 				<div class="h-20 flex justify-between items-center">
-					<HeaderLogo logo={isMobile ? mobileLogo : desktopLogo} />
+					<HeaderLogo />
 					{!isMobile ? <DesktopMenu /> : <MobileMenu />}
 				</div>
 			</Container>

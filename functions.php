@@ -32,9 +32,7 @@ function work_service_rewrite_rules()
 {
   add_rewrite_rule('ws-customer/([a-zA-Z0-9-]+)[/]?$', 'index.php?customer_page=$matches[1]', 'top');
 
-  add_rewrite_rule('ws-customer/services/([a-zA-Z0-9-]+)[/]?$', 'index.php?service=$matches[1]', 'top');
-
-  add_rewrite_rule('ws-customer/category/([a-zA-Z0-9-]+)[/]?$', 'index.php?category=$matches[1]', 'top');
+  add_rewrite_rule('ws-expert/([a-zA-Z0-9-]+)[/]?$', 'index.php?expert_page=$matches[1]', 'top');
 }
 
 add_action('init', 'work_service_rewrite_rules');
@@ -42,8 +40,7 @@ add_action('init', 'work_service_rewrite_rules');
 function work_service_query_vars($query_vars)
 {
   $query_vars[] = 'customer_page';
-  $query_vars[] = 'service';
-  $query_vars[] = 'category';
+  $query_vars[] = 'expert_page';
   return $query_vars;
 }
 
@@ -52,11 +49,10 @@ add_filter('query_vars', 'work_service_query_vars');
 function work_service_template_include($template)
 {
   if (get_query_var('customer_page') != false && get_query_var('customer_page') != '') {
-    // if (!is_user_logged_in()) {
-    //   wp_redirect(site_url('/'));
-    // } else {
     return WST_PATH . 'includes/pages/customer/ws-customer-app-page.php';
-    // }
+  }
+  if (get_query_var('expert_page') != false && get_query_var('expert_page') != '') {
+    return WST_PATH . 'includes/pages/expert/ws-expert-app-page.php';
   }
 
   return $template;

@@ -25,23 +25,14 @@ if ($page != false && $page != '') :
           case 'dashboard':
             $this->dashboard();
             break;
-          case 'services':
-            $this->services();
-            break;
           case 'bookings':
             $this->bookings();
             break;
           case 'chat':
             $this->chat();
             break;
-          case 'settings':
-            $this->settings();
-            break;
           case 'profile':
             $this->profile();
-            break;
-          case 'logout':
-            $this->logout();
             break;
           default:
             break;
@@ -54,11 +45,6 @@ if ($page != false && $page != '') :
         echo '<div id="work-service-customer-dashboard"></div>';
       }
 
-      private function services()
-      {
-        echo '<div id="work-service-customer-services"></div>';
-      }
-
       private function bookings()
       {
         echo '<div id="work-service-customer-bookings"></div>';
@@ -69,19 +55,9 @@ if ($page != false && $page != '') :
         echo '<div id="work-service-customer-chat"></div>';
       }
 
-      private function settings()
-      {
-        echo '<div id="work-service-customer-settings"></div>';
-      }
-
       private function profile()
       {
         echo '<div id="work-service-customer-profile"></div>';
-      }
-
-      private function logout()
-      {
-        echo '<div id="work-service-customer-logout"></div>';
       }
     }
     new Work_Service_Customers_App();

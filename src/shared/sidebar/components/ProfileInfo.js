@@ -1,8 +1,8 @@
 import profileImg from "../../../assets/imgs/profile-placeholder.jpg"
-import useCustomerContext from "../../../context/customer/useCustomerContext"
+import useThemeContext from "../../../context/theme/useThemeContext"
 
 const ProfileInfo = () => {
-	const { profile } = useCustomerContext()
+	const { profile } = useThemeContext()
 
 	return (
 		<div className="flex flex-col items-center">
@@ -15,7 +15,7 @@ const ProfileInfo = () => {
 			<h4 className="text-zinc-50 mt-4 text-center font-sansation-bold text-lg">
 				{profile.display_name} {profile.user_nicename}
 			</h4>
-			<p className="text-base text-center font-medium text-zinc-300 font-jost-regular">@{profile.username}</p>
+			<p className="text-base text-center font-medium text-zinc-300 font-jost-regular">{profile.role === `expert` ? profile.profession : `@${profile.username}`}</p>
 		</div>
 	)
 }

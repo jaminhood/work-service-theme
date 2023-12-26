@@ -1,12 +1,12 @@
-import logo from "../../../assets/imgs/word-logo.png"
-import { SITE_URL } from "../../../utils"
+import { desktopLogo } from "../../../helpers/images"
+import { getURL } from "../../../utils"
 
 const FooterLogo = () => {
 	return (
 		<div>
-			<a href={SITE_URL}>
+			<a href={getURL()}>
 				<img
-					src={logo}
+					src={desktopLogo}
 					className="object-cover h-8"
 				/>
 			</a>

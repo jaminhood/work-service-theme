@@ -1,5 +1,5 @@
 const Textarea = props => {
-	const { id, placeholder, label, cls, value, handleInput } = props
+	const { id, placeholder, label, disabled, cls, value, handleInput } = props
 
 	return (
 		<div className="col-span-1 py-2">
@@ -16,6 +16,7 @@ const Textarea = props => {
 					id={id}
 					autoComplete={id}
 					placeholder={placeholder}
+					disabled={disabled ? disabled : false}
 					required
 					className={`block w-full px-4 py-3 focus:outline-[0] h-60 resize-none font-jost-regular placeholder:font-jost-regular shadow-sm sm:text-sm border-gray-300 rounded-md ${cls ? cls : ``}`}
 					value={value}

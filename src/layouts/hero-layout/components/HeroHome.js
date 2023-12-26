@@ -1,5 +1,5 @@
+import { heroSlides } from "../../../helpers/images"
 import useDeviceType from "../../../hooks/useDeviceType"
-import { heroSlides } from "../../../utils"
 import { HeroContent } from "./HeroContent"
 import { HeroSlider } from "./HeroSlider"
 
@@ -8,7 +8,7 @@ const HeroHome = () => {
 	const { desktop, mobile } = heroSlides
 
 	return (
-		<div className="relative overflow-hidden md:h-screen">
+		<div className="relative h-screen overflow-hidden">
 			<HeroSlider heroSlides={isMobile ? mobile : desktop} />
 			<HeroContent />
 		</div>

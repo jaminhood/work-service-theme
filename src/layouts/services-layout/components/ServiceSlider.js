@@ -1,5 +1,5 @@
 import Slider from "react-slick"
-import { ServiceBox } from "./ServiceBox"
+import { ServiceBoxSquare } from "./ServiceBoxSquare"
 
 const settings = {
 	dots: false,
@@ -24,22 +24,18 @@ const settings = {
 const ServiceSlider = ({ services }) => {
 	return services.length > 2 ? (
 		<Slider {...settings}>
-			{services.map((service, idx) => (
-				<ServiceBox
+			{services.map(service => (
+				<ServiceBoxSquare
 					service={service}
-					index={idx}
 					key={service.serviceID}
 				/>
 			))}
 		</Slider>
 	) : (
 		<div className="grid grid-cols-2 gap-8">
-			{services.map((service, idx) => (
+			{services.map(service => (
 				<div key={service.serviceID}>
-					<ServiceBox
-						service={service}
-						index={idx}
-					/>
+					<ServiceBoxSquare service={service} />
 				</div>
 			))}
 		</div>

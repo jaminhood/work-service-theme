@@ -65,7 +65,7 @@ const ContactInfo = () => {
 			/>
 			<ContactCard
 				title="Live Chat"
-				text="Our dedicated customer support team is available to assist you with any inquiries or concerns."
+				text="Our dedicated customer support team is available to assist you with any inquiries or concerns once you've signed in to the user's dashboard."
 			/>
 			<ContactCard
 				title="Connect with Us"

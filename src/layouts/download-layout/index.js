@@ -1,11 +1,13 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+import useDeviceType from "../../hooks/useDeviceType"
 import Container from "../../shared/Container"
 import { Btn } from "../../shared/btn"
 import { Icon } from "../../shared/icon"
 import { SITE_URL } from "../../utils"
 
 const DownloadLayout = () => {
+	const { isMobile } = useDeviceType()
 	const [ios, setIos] = useState(`#`)
 	const [android, setAndroid] = useState(`#`)
 
@@ -25,39 +27,39 @@ const DownloadLayout = () => {
 		<div className="pb-12 bg-zinc-50">
 			<Container>
 				<div className="grid grid-cols-2 gap-8 md:grid-cols-3 md:px-20">
-					<h3 className="col-span-2 text-4xl font-bold text-center md:text-left md:col-span-1 text-main-primary">Download App</h3>
+					<h3 className="col-span-2 text-4xl font-bold text-center md:text-left md:col-span-1 text-main-primary font-sansation-bold">Download App</h3>
 					<a
 						href={android}
 						target="_blank">
 						<Btn
-							size="lg"
-							cls="bg-main-secondary text-zinc-50 rounded-2xl w-full">
+							size={isMobile ? "md" : "lg"}
+							cls="bg-main-secondary text-zinc-50 rounded-2xl w-full font-jost-regular text-base">
 							<span>
 								<Icon
 									name="playstore"
-									width="25px"
+									width={isMobile ? "17px" : "25px"}
 									height="24px"
 									fill="#F0FECD"
 								/>
 							</span>
-							<span className="font-jost-regular">Google Play</span>
+							Google Play
 						</Btn>
 					</a>
 					<a
 						href={ios}
 						target="_blank">
 						<Btn
-							size="lg"
-							cls="bg-main-primary text-zinc-50 rounded-2xl w-full">
+							size={isMobile ? "md" : "lg"}
+							cls="bg-main-primary text-zinc-50 rounded-2xl w-full font-jost-regular text-base">
 							<span>
 								<Icon
 									name="apple"
-									width="25px"
+									width={isMobile ? "17px" : "25px"}
 									height="24px"
 									fill="#F0FECD"
 								/>
 							</span>
-							<span className="font-jost-regular">Apple Store</span>
+							Apple Store
 						</Btn>
 					</a>
 				</div>

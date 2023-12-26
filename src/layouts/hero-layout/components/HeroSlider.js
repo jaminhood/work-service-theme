@@ -21,10 +21,10 @@ const HeroSlider = ({ heroSlides }) => {
 	}, [controls])
 
 	return (
-		<div className="absolute inset-0 -z-10">
+		<div className="absolute inset-0 -z-10 h-screen">
 			{heroSlides.map((slide, i) => (
 				<motion.div
-					className="absolute inset-0 -z-20"
+					className="absolute inset-0 -z-20 h-screen"
 					key={i}
 					initial={{ opacity: 0 }}
 					animate={{
@@ -33,7 +33,7 @@ const HeroSlider = ({ heroSlides }) => {
 					}}>
 					<img
 						src={slide}
-						className="object-cover w-full h-full"
+						className="object-cover w-full h-screen"
 					/>
 				</motion.div>
 			))}

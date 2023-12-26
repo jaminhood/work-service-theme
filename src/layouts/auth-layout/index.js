@@ -1,6 +1,6 @@
-import authImg from "../../assets/imgs/auth-modal-bg.png"
 import useThemeContext from "../../context/theme/useThemeContext"
 import { Modal } from "../../shared/modal"
+import { AuthInfo } from "./components/AuthInfo"
 import { EnterPin } from "./components/EnterPin"
 import { ForgotPassword } from "./components/ForgotPassword"
 import { ResetPassword } from "./components/ResetPassword"
@@ -13,14 +13,8 @@ const AuthLayout = () => {
 	return (
 		openedModal.includes(`auth`) && (
 			<Modal toggleOpen={handleCloseModal}>
-				<div className="grid grid-cols-2 h-[90vh] items-center">
-					<div className="col-span-1 h-[90vh]">
-						<img
-							src={authImg}
-							alt="Auth"
-							className="w-full h-full object-cover"
-						/>
-					</div>
+				<div className="grid grid-cols-1 md:grid-cols-2 md:h-[90vh] items-center">
+					<AuthInfo />
 					<div className="col-span-1 p-12 h-full overflow-y-auto grid items-center">
 						{openedModal.includes(`signup`) && <SignUp />}
 						{openedModal.includes(`signin`) && <SignIn />}

@@ -13,7 +13,7 @@ const TrustedByLayout = () => {
 	}, [])
 
 	return (
-		<div className="py-8 bg-[#F2F0F7]">
+		<div className="md:py-8 py-4 bg-[#F2F0F7]">
 			<Container>
 				<div className="flex items-center justify-center gap-8">
 					<h2 className="text-lg text-center font-sansation-bold text-[#B7B1C0]">Trusted By:</h2>

@@ -1,26 +1,35 @@
-import axios from "axios"
 import { useEffect, useState } from "react"
-import { SITE_URL } from "../../../../utils"
+import useThemeContext from "../../../../context/theme/useThemeContext"
+import { Loader } from "../../../../shared/loader"
 import { ServiceSlider } from "../../../services-layout/components/ServiceSlider"
 import { CustomerDashboardContentBox } from "./CustomerDashboardContentBox"
 
 const CustomerDashboardContentServices = () => {
+	const { loading, getDashboardData, handleLoading } = useThemeContext()
 	const [services, setServices] = useState([])
 
-	const getAllServices = async () => await axios.get(`${SITE_URL}wp-json/ws-api/v1/admin/services`).then(res => setServices(res.data))
+	const getData = async () => {
+		handleLoading(true)
+		const { allServics } = await getDashboardData()
+		setServices(allServics)
+		handleLoading(false)
+	}
 
 	useEffect(() => {
-		getAllServices()
+		getData()
 	}, [])
 
 	const params = { heading: `Featured Services` }
 
 	return (
-		<CustomerDashboardContentBox {...params}>
-			<div className="w-full overflow-hidden">
-				<ServiceSlider services={services} />
-			</div>
-		</CustomerDashboardContentBox>
+		<>
+			{loading && <Loader />}
+			<CustomerDashboardContentBox {...params}>
+				<div className="w-full overflow-hidden">
+					<ServiceSlider services={services} />
+				</div>
+			</CustomerDashboardContentBox>
+		</>
 	)
 }
 

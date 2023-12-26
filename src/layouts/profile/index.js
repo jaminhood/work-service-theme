@@ -1,10 +1,12 @@
-import { CustomerProfile } from "./components/CustomerProfile"
+import ThemeProvider from "../../context/theme/ThemeProvider"
+import { ProfileLayout } from "./components/ProfileLayout"
 
 const Profile = ({ account }) => {
-	switch (account) {
-		case `customer`:
-			return <CustomerProfile />
-	}
+	return (
+		<ThemeProvider>
+			<ProfileLayout account={account} />
+		</ThemeProvider>
+	)
 }
 
 export { Profile }

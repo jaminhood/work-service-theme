@@ -1,12 +1,11 @@
-import axios from "axios"
 import { useState } from "react"
 import useThemeContext from "../../../context/theme/useThemeContext"
 import { Btn } from "../../../shared/btn"
 import { InputField } from "../../../shared/input-field"
-import { SITE_URL } from "../../../utils"
+import { Loader } from "../../../shared/loader"
 
 const SignUp = () => {
-	const { handleOpenModal } = useThemeContext()
+	const { loading, handleRegister } = useThemeContext()
 	const [formData, setFormData] = useState({
 		fullname: ``,
 		email: ``,
@@ -27,34 +26,13 @@ const SignUp = () => {
 		setFormData(prev => ({ ...prev, [name]: value }))
 	}
 
-	const handleClick = async () => {
-		const { fullname, email, username, phone, password, role } = formData
+	const handleClick = async () => await handleRegister(formData)
 
-		if (password !== formData[`repeat-password`]) {
-			alert(`Your Passwords Do Not Match!`)
-			return
-		}
-
-		const names = fullname.split(` `)
-		const firstname = names[0]
-		const lastname = names[1]
-
-		const params = { firstname, lastname, email, username, phone, password, role }
-
-		await axios.post(`${SITE_URL}wp-json/ws-auth/v1/register`, params).then(res => {
-			if (res.data !== `User Created Successfully`) {
-				alert(res.data)
-				return
-			}
-
-			alert(res.data)
-			handleOpenModal(`auth-signin`)
-		})
-	}
-
-	return (
-		<div className="grid grid-cols-1 overflow-y-auto h-full">
-			<h2 className="text-main-primary text-center font-sansation-bold text-2xl">Create an Account</h2>
+	return loading ? (
+		<Loader />
+	) : (
+		<div className="grid h-full grid-cols-1 overflow-y-auto">
+			<h2 className="text-2xl text-center text-main-primary font-sansation-bold">Create an Account</h2>
 			<InputField
 				name="input"
 				id="fullname"
@@ -73,7 +51,7 @@ const SignUp = () => {
 				value={formData.email}
 				handleInput={handleInput}
 			/>
-			<div className="col-span-1 grid grid-cols-2 gap-4">
+			<div className="grid grid-cols-2 col-span-1 gap-4">
 				<InputField
 					name="input"
 					id="username"
@@ -93,7 +71,7 @@ const SignUp = () => {
 					handleInput={handleInput}
 				/>
 			</div>
-			<div className="col-span-1 grid grid-cols-2 gap-4">
+			<div className="grid grid-cols-2 col-span-1 gap-4">
 				<InputField
 					name="password"
 					id="password"

@@ -1,6 +1,6 @@
 import useCustomerContext from "../../../../context/customer/useCustomerContext"
 import useDeviceType from "../../../../hooks/useDeviceType"
-import { CustomerProfileRequestForm } from "../../../profile/components/CustomerProfileRequestForm"
+import { ProfileRequestForm } from "../../../profile/components/ProfileRequestForm"
 import { CustomerCategories } from "./CustomerCategories"
 import { CustomerCategoriesAddressForm } from "./CustomerCategoriesAddressForm"
 import { CustomerCategoriesRenderMenu } from "./CustomerCategoriesRenderMenu"
@@ -15,7 +15,7 @@ const CustomerCategoriesRender = () => {
 	}
 
 	if (openedCategory === `request-form`) {
-		return <CustomerProfileRequestForm />
+		return <ProfileRequestForm />
 	}
 
 	if (openedCategory === `address-form`) {

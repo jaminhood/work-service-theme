@@ -1,7 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { Icon } from "../../../shared/icon"
-import { SITE_URL } from "../../../utils"
+import { apiRoutes, getURL } from "../../../utils"
 
 const FooterSocial = () => {
 	const [locationLink, setLocationLink] = useState(`#`)
@@ -11,7 +11,7 @@ const FooterSocial = () => {
 	const [instagramLink, setInstagramLink] = useState(`#`)
 
 	const getData = async () =>
-		await axios.get(`${SITE_URL}wp-json/ws-api/v1/admin/contacts`).then(({ data }) => {
+		await axios.get(getURL(apiRoutes.contact.get)).then(({ data }) => {
 			if (data.length > 0) {
 				setLocationLink(data[data.length - 1].contactLocationLink)
 				setEmail(data[data.length - 1].contactMail)

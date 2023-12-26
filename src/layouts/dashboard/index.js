@@ -1,15 +1,14 @@
-import CustomerProvider from "../../context/customer/CustomerProvider"
+import ThemeProvider from "../../context/theme/ThemeProvider"
 import { CustomerDashboard } from "./components/customer/CustomerDashboard"
+import { ExpertDashboard } from "./components/expert/ExpertDashboard"
 
 const Dashboard = ({ account }) => {
-	switch (account) {
-		case `customer`:
-			return (
-				<CustomerProvider>
-					<CustomerDashboard />
-				</CustomerProvider>
-			)
-	}
+	return (
+		<ThemeProvider>
+			{account === `customer` && <CustomerDashboard />}
+			{account === `expert` && <ExpertDashboard />}
+		</ThemeProvider>
+	)
 }
 
 export { Dashboard }

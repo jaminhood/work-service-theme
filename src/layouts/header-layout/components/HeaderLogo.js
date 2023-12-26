@@ -1,13 +1,17 @@
-import { SITE_URL } from "../../../utils"
+import { desktopLogo, mobileLogo } from "../../../helpers/images"
+import useDeviceType from "../../../hooks/useDeviceType"
+import { getURL } from "../../../utils"
 
-const HeaderLogo = ({ logo }) => {
+const HeaderLogo = () => {
+	const { isMobile } = useDeviceType()
+
 	return (
 		<span>
 			<a
-				href={SITE_URL}
+				href={getURL()}
 				className="relative z-50">
 				<img
-					src={logo}
+					src={isMobile ? mobileLogo : desktopLogo}
 					className="object-cover h-8"
 				/>
 			</a>

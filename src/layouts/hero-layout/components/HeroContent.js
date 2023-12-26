@@ -2,28 +2,31 @@ import useThemeContext from "../../../context/theme/useThemeContext"
 import useDeviceType from "../../../hooks/useDeviceType"
 import Container from "../../../shared/Container"
 import { Btn } from "../../../shared/btn"
-import { SITE_URL } from "../../../utils"
+import { getURL } from "../../../utils"
 
 const HeroContent = () => {
 	const { isMobile } = useDeviceType()
-	const { handleOpenModal } = useThemeContext()
+	const { handleOpenModal, getUserProfile } = useThemeContext()
 
-	const handleClick = () => {
+	const handleClick = async () => {
 		const token = localStorage.getItem(`ws-token`)
 		if (!token || token === ``) {
 			handleOpenModal(`auth-signin`)
 			return
 		}
 
-		location.replace(`${SITE_URL}/ws-customer/dashboard/`)
+		const profile = await getUserProfile()
+		location.replace(getURL(`ws-${profile.role}/dashboard/`))
 	}
 
 	return (
 		<Container>
 			<div className="grid md:items-center md:grid-cols-2 md:h-screen">
-				<div className="col-span-1 pt-12 pb-40 md:py-20 text-left">
-					<h1 className={`mt-4 mb-8 text-3xl md:mb-0 ${isMobile ? `text-center` : `text-left`} md:text-6xl font-sansation-bold text-zinc-50`}>Find an expert for every task, right away</h1>
-					<div className="grid items-center mt-4 grid-cols-4">
+				<div className="col-span-1 pt-20 text-left md:py-20">
+					<h1 className={`mt-4 mb-8 text-[32px] md:mb-0 ${isMobile ? `text-center` : `text-left`} md:text-6xl font-sansation-bold text-zinc-50 leading-10`}>
+						Find an Expert for {isMobile && <br />} every Task, right away
+					</h1>
+					<div className="grid items-center grid-cols-4 md:mt-4">
 						<Btn
 							size="lg"
 							handleClick={handleClick}
